@@ -5,17 +5,23 @@ import Header from '~/components/Header';
 import Home from '~/pages/Home';
 import Cart from '~/pages/Cart';
 
-export default () =>
-  createAppContainer(
-    createStackNavigator(
-      {
-        Home,
-        Cart,
+import colors from './styles/colors';
+
+const Routes = createAppContainer(
+  createStackNavigator(
+    {
+      Home: { screen: Home },
+      Cart: { screen: Cart },
+    },
+    {
+      defaultNavigationOptions: {
+        header: <Header />,
       },
-      {
-        defaultNavigationOptions: navigation => ({
-          header: <Header {...navigation} />,
-        }),
-      }
-    )
-  );
+      cardStyle: {
+        backgroundColor: colors.dark,
+      },
+    }
+  )
+);
+
+export default Routes;

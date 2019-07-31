@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
+import { darken } from 'polished';
+import colors from '~/styles/colors';
 
-export const Logo = styled.Image`
-  width: 185px;
-  height: 24px;
+export const Container = styled.View`
+  background: ${colors.dark};
 `;
